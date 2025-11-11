@@ -59,7 +59,7 @@
   <header>
     <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px">
       <div class="logo">
-        <img alt="CFC365 logo" src="/carfinanceclaims365.png" />
+        <img alt="CFC365 logo" src="carfinanceclaims365.png" />
         <div class="brand">Car Finance Claims 365</div>
       </div>
       
@@ -154,7 +154,7 @@
   <footer>
     <div class="container">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-        <img alt="CFC365 logo" src="/carfinanceclaims365.png" style="width:28px;height:28px;border-radius:6px"/>
+        <img alt="CFC365 logo" src="carfinanceclaims365.png" style="width:28px;height:28px;border-radius:6px"/>
         <strong style="color:#fff">Car Finance Claims 365</strong>
       </div>
       <div class="notice">Contact: <a href="mailto:info@carfinanceclaims365.co.uk">info@carfinanceclaims365.co.uk</a><br/>We are a marketing/referral service. Claims handled by FCA‑regulated solicitors. No win, no fee applies. Outcomes aren’t guaranteed. Do not stop repayments.</div>
@@ -185,6 +185,13 @@
         mode: "no-cors",
         body: new URLSearchParams({
           "entry.1473732619": fd.get('name'),
+          "entry.1558399156": fd.get('phone'),
+          "entry.1719052773": fd.get('email'),
+          "entry.129104276": fd.get('finance'),
+          "entry.874772521": fd.get('year'),
+          "entry.2072962811": fd.get('lender'),
+          "entry.1736790302": document.getElementById('consent').checked ? "Yes" : "No"
+        }),
           "entry.1558399156": fd.get('phone'),
           "entry.1719052773": fd.get('email'),
           "entry.129104276": fd.get('finance'),
