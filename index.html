@@ -54,6 +54,7 @@
   }
 .consent-wrap{margin-top:12px;display:flex;align-items:center;gap:8px;}
 </style>
+<link rel="icon" type="image/png" href="carfinanceclaims365.png" />
 </head>
 <body>
   <header>
@@ -187,7 +188,13 @@
       body: new URLSearchParams({
         "fvv": 1,
         "fbzx": Date.now(),
-        $1
+        "entry.1473732619": fd.get('name'),
+        "entry.1558399156": fd.get('phone'),
+        "entry.1719052773": fd.get('email'),
+        "entry.129104276": fd.get('finance'),
+        "entry.874772521": fd.get('year'),
+        "entry.2072962811": fd.get('lender'),
+        "entry.1736790302": document.getElementById('consent').checked ? "Yes" : "No"
       })
     }).then(() => {
       msg.textContent = "✅ Submitted. We will contact you shortly.";
