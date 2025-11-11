@@ -85,25 +85,25 @@
       </div>
       <div class="card">
         <h3 style="margin:4px 0 10px">Eligibility check</h3>
-        <form id="form">
+        <form id="form" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSeO4Ynf1WGUmna3W5vP0d3AaIskem-VNDnBDvSZAgM49PsWYA/formResponse" target="hidden_iframe" onsubmit="submitted=true;">
           <div class="row">
             <div>
               <label>Full name</label>
-              <input name="name" placeholder="Alex Taylor" required />
+              <input name="entry.1473732619" placeholder="Alex Taylor" required />
             </div>
             <div>
               <label>Mobile number</label>
-              <input name="phone" inputmode="tel" placeholder="07…" required />
+              <input name="entry.1558399156" inputmode="tel" placeholder="07…" required />
             </div>
           </div>
           <div class="row" style="margin-top:12px">
             <div>
               <label>Email</label>
-              <input name="email" type="email" placeholder="you@email.com" required />
+              <input name="entry.1719052773" type="email" placeholder="you@email.com" required />
             </div>
             <div>
               <label>Finance type</label>
-              <select name="finance" required>
+              <select name="entry.129104276" required>
                 <option value="">Select…</option>
                 <option>PCP</option>
                 <option>HP</option>
@@ -114,21 +114,22 @@
           <div class="row" style="margin-top:12px">
             <div>
               <label>Year finance started</label>
-              <select name="year" required>
+              <select name="entry.874772521" required>
                 <option value="">Select…</option>
                 <!-- Years inserted via JS 2007→2021 -->
               </select>
             </div>
             <div>
               <label>Lender (optional)</label>
-              <input name="lender" placeholder="e.g. Black Horse, Santander" />
+              <input name="entry.2072962811" placeholder="e.g. Black Horse, Santander" />
             </div>
           </div>
-          <div class="consent-wrap"><input id="consent" type="checkbox" required /><label for="consent" class="muted">I agree to be contacted regarding my claim.</label></div>
+          <div class="consent-wrap"><input id="consent" name="entry.1736790302" type="checkbox" value="I confirm" required /><label for="consent" class="muted">I agree to be contacted regarding my claim.</label></div>
           <button class="btn" style="width:100%;margin-top:12px" type="submit">Begin Free Check</button>
           <div id="msg" class="muted" style="margin-top:10px"></div>
           <p class="muted" style="margin-top:8px">* No win, no fee applies via our solicitor partner. Outcomes aren’t guaranteed. Do not stop repayments.</p>
         </form>
+<iframe name="hidden_iframe" style="display:none;"></iframe>
       </div>
     </div>
   </section>
@@ -165,7 +166,7 @@
 
 <script>
   // Insert years 2007 → 2021
-  const yearSel = document.querySelector('select[name="year"]');
+  const yearSel = document.querySelector('select[name="entry.874772521"]');
   for (let y = 2021; y >= 2007; y--) {
     const o = document.createElement('option');
     o.value = y;
@@ -174,32 +175,9 @@
   }
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // === Form handling ===
-  const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdvQgGvszD1p6F6v8aY45IIm8ua_vndAte0o8kSDoDfnSvoQQ/formResponse";
-
-  document.getElementById('form').addEventListener('submit', function(e){
-    e.preventDefault();
-    const fd = new FormData(this);
-    const msg = document.getElementById('msg');
-
-    fetch(GOOGLE_FORM_URL, {
-      method: "POST",
-      mode: "no-cors",
-      body: new URLSearchParams({
-        "fvv": 1,
-        "fbzx": Date.now(),
-        "entry.1473732619": fd.get('name'),
-        "entry.1558399156": fd.get('phone'),
-        "entry.1719052773": fd.get('email'),
-        "entry.129104276": fd.get('finance'),
-        "entry.874772521": fd.get('year'),
-        "entry.2072962811": fd.get('lender'),
-        "entry.1736790302": document.getElementById('consent').checked ? "Yes" : "No"
-      })
-    }).then(() => {
-      msg.textContent = "✅ Submitted. We will contact you shortly.";
-      document.getElementById('form').reset();
-    });
+  var submitted = false;
+  document.getElementById('form').addEventListener('submit', function () {
+    document.getElementById("msg").textContent = "✅ Submitted. We will contact you shortly.";
   });
 </script>
 </body>
