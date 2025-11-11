@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Car Finance Claims 365 - Free Eligibility Check</title>
+<meta name="description" content="Check if you’re owed £1,000s from mis‑sold car finance (PCP/HP). Free 60‑second check. No win, no fee. Car Finance Claims 365." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand:#0B3B75; /* navy */
+    --brand-2:#127BDB; /* accent blue */
+    --silver:#C7CCD6; /* soft silver */
+    --text:#0b1324;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:#ffffff}
+  a{color:var(--brand-2);text-decoration:none}
+  .container{max-width:1100px;margin:0 auto;padding:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:14px;background:var(--brand);color:#fff;padding:14px 20px;font-weight:700;cursor:pointer;transition:.2s;box-shadow:0 6px 16px rgba(11,59,117,.18)}
+  .btn:hover{filter:brightness(1.06)}
+  .btn.secondary{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+  header{border-bottom:1px solid #eef1f6;background:#fff;position:sticky;top:0;z-index:50}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo img{width:40px;height:40px;border-radius:10px;display:block}
+  .brand{font-weight:800;letter-spacing:.2px}
+  .hero{background:linear-gradient(180deg,#ffffff 0%,#f6f9ff 100%)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+  .badge{display:inline-flex;gap:8px;align-items:center;background:#ECF3FF;color:#0b3b75;padding:8px 12px;border-radius:999px;font-weight:600;font-size:12px}
+  h1{font-size:40px;line-height:1.1;margin:18px 0 10px}
+  .sub{font-size:18px;color:#4b5563;margin-bottom:18px}
+  .trust{display:flex;gap:18px;flex-wrap:wrap;color:#475569;font-size:14px}
+  .card{background:#fff;border:1px solid #e9edf5;border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(8,25,56,.06)}
+  form label{display:block;font-size:13px;font-weight:600}
+  input,select{width:100%;margin-top:6px;padding:12px 12px;border:1px solid #d7dbe5;border-radius:12px;font-size:15px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .muted{font-size:12px;color:#6b7280}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .step{border:1px solid #e9edf5;border-radius:16px;padding:16px;background:#fff}
+  .faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  details{border:1px solid #e9edf5;border-radius:12px;padding:14px;background:#fff}
+  footer{background:#0b1a35;color:#cfd6e6;margin-top:40px}
+  footer .container{padding:28px 20px}
+  .notice{font-size:12px;line-height:1.6;color:#cbd5e1}
+
+  /* mobile */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr}
+    .row{grid-template-columns:1fr}
+    .steps,.faq{grid-template-columns:1fr}
+    h1{font-size:32px}
+  }
+.consent-wrap{margin-top:12px;display:flex;align-items:center;gap:8px;}
+</style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px">
+      <div class="logo">
+        <img alt="CFC365 logo" src="/carfinanceclaims365.png" />
+        <div class="brand">Car Finance Claims 365</div>
+      </div>
+      
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid" style="padding:34px 20px 40px">
+      <div>
+        <div class="badge">✔ Free 60‑second check</div>
+        <h1>Check if you’re owed £1,000s from mis‑sold car finance.</h1>
+        <p class="sub">Free 60‑second check. No win, no fee.</p>
+        <div class="trust">
+          <div>⚖️ FCA‑regulated solicitor partner</div>
+          <div>📱 No paperwork needed</div>
+          <div>🔒 Secure & GDPR compliant</div>
+        </div>
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          
+          <a class="btn secondary" href="#how">How it works</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin:4px 0 10px">Eligibility check</h3>
+        <form id="form">
+          <div class="row">
+            <div>
+              <label>Full name</label>
+              <input name="name" placeholder="Alex Taylor" required />
+            </div>
+            <div>
+              <label>Mobile number</label>
+              <input name="phone" inputmode="tel" placeholder="07…" required />
+            </div>
+          </div>
+          <div class="row" style="margin-top:12px">
+            <div>
+              <label>Email</label>
+              <input name="email" type="email" placeholder="you@email.com" required />
+            </div>
+            <div>
+              <label>Finance type</label>
+              <select name="finance" required>
+                <option value="">Select…</option>
+                <option>PCP</option>
+                <option>HP</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+          </div>
+          <div class="row" style="margin-top:12px">
+            <div>
+              <label>Year finance started</label>
+              <select name="year" required>
+                <option value="">Select…</option>
+                <!-- Years inserted via JS 2007→2021 -->
+              </select>
+            </div>
+            <div>
+              <label>Lender (optional)</label>
+              <input name="lender" placeholder="e.g. Black Horse, Santander" />
+            </div>
+          </div>
+          <div class="consent-wrap"><input id="consent" type="checkbox" required /><label for="consent" class="muted">I agree to be contacted regarding my claim.</label></div>
+          <button class="btn" style="width:100%;margin-top:12px" type="submit">Begin Free Check</button>
+          <div id="msg" class="muted" style="margin-top:10px"></div>
+          <p class="muted" style="margin-top:8px">* No win, no fee applies via our solicitor partner. Outcomes aren’t guaranteed. Do not stop repayments.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="container" style="padding:28px 20px 10px">
+    <h3 style="margin:0 0 12px">How it works</h3>
+    <div class="steps">
+      <div class="step"><strong>1) Check</strong><br/>Answer a few quick questions. Takes less than 60 seconds.</div>
+      <div class="step"><strong>2) Review</strong><br/>Our FCA‑regulated solicitor partner reviews your case.</div>
+      <div class="step"><strong>3) Proceed</strong><br/>If eligible, they’ll progress your claim. No win, no fee.</div>
+    </div>
+  </section>
+
+  <section class="container" style="padding:40px 20px 30px">
+    <h3 style="margin:0 0 12px">FAQs</h3>
+    <div class="faq">
+      <details><summary><strong>What is a mis‑sold car finance claim?</strong></summary><div class="muted" style="margin-top:8px">If a broker or lender failed to disclose commissions that affected your interest rate, or charged unfair interest, you may be able to claim compensation.</div></details>
+      <details><summary><strong>Do I need paperwork?</strong></summary><div class="muted" style="margin-top:8px">No. Start with basic details. Any documents can be requested later by the solicitor.</div></details>
+      <details><summary><strong>How long does it take?</strong></summary><div class="muted" style="margin-top:8px">Timeframes vary by lender and case complexity. You’ll receive updates throughout.</div></details>
+      <details><summary><strong>What does no win, no fee mean?</strong></summary><div class="muted" style="margin-top:8px">If the claim doesn’t succeed, you won’t pay the solicitor’s success fee. Other charges may apply—see client paperwork.</div></details>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+        <img alt="CFC365 logo" src="/carfinanceclaims365.png" style="width:28px;height:28px;border-radius:6px"/>
+        <strong style="color:#fff">Car Finance Claims 365</strong>
+      </div>
+      <div class="notice">Contact: <a href="mailto:info@carfinanceclaims365.co.uk">info@carfinanceclaims365.co.uk</a><br/>We are a marketing/referral service. Claims handled by FCA‑regulated solicitors. No win, no fee applies. Outcomes aren’t guaranteed. Do not stop repayments.</div>
+      <div class="notice" style="margin-top:10px">© <span id="year"></span> Car Finance Claims 365</div>
+    </div>
+  </footer>
+
+<script>
+  // Insert years 2007 → 2021
+  const yearSel = document.querySelector('select[name="year"]');
+  for (let y = 2021; y >= 2007; y--) {
+    const o = document.createElement('option'); o.value = y; o.textContent = y; yearSel.appendChild(o);
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // === Form handling ===
+  const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdvQgGvszD1p6F6v8aY45IIm8ua_vndAte0o8kSDoDfnSvoQQ/formResponse";
+
+  document.getElementById('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const fd = new FormData(this);
+    const msg = document.getElementById('msg');
+
+    if (GOOGLE_FORM_URL) {
+      /* Submit silently to Google Form */
+      fetch(GOOGLE_FORM_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: new URLSearchParams({
+          "entry.1473732619": fd.get('name'),
+          "entry.1558399156": fd.get('phone'),
+          "entry.1719052773": fd.get('email'),
+          "entry.129104276": fd.get('finance'),
+          "entry.874772521": fd.get('year'),
+          "entry.1736790302": fd.get('lender')
+        })
+      }).then(() => {
+        msg.textContent = "✅ Submitted. We will contact you shortly.";
+        document.getElementById('form').reset();
+      });
+    }
+
+    // Fallback: mailto (so you can test immediately if you haven’t created a Form yet)
+    const body = `Name: ${fd.get('name')}\nPhone: ${fd.get('phone')}\nEmail: ${fd.get('email')}\nFinance: ${fd.get('finance')}\nYear: ${fd.get('year')}\nLender: ${fd.get('lender')}`;
+    
+  });
+</script>
+</body>
+</html>
