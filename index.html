@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -186,13 +185,9 @@
       method: "POST",
       mode: "no-cors",
       body: new URLSearchParams({
-        "entry.1473732619": fd.get('name'),
-        "entry.1558399156": fd.get('phone'),
-        "entry.1719052773": fd.get('email'),
-        "entry.129104276": fd.get('finance'),
-        "entry.874772521": fd.get('year'),
-        "entry.2072962811": fd.get('lender'),
-        "entry.1736790302": document.getElementById('consent').checked ? "Yes" : "No"
+        "fvv": 1,
+        "fbzx": Date.now(),
+        $1
       })
     }).then(() => {
       msg.textContent = "✅ Submitted. We will contact you shortly.";
