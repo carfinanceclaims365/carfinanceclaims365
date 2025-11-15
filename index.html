@@ -87,7 +87,7 @@
       </div>
       <div class="card">
         <h3 style="margin:4px 0 10px">Eligibility check</h3>
-        <form id="form" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSeO4Ynf1WGUmna3W5vP0d3AaIskem-VNDnBDvSZAgM49PsWYA/formResponse" target="hidden_iframe" onsubmit="submitted=true;">
+        <form id="form" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSeO4Ynf1WGUmna3W5vP0d3AaIskem-VNDnBDvSZAgM49PsWYA/formResponse" target="hidden_iframe" >
           <div class="row">
             <div>
               <label>Full name</label>
@@ -178,20 +178,36 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   var submitted = false;
-  document.getElementById('form').addEventListener('submit', function (e) {
+  const formEl = document.getElementById('form');
+  const submitBtn = document.querySelector('button[type="submit"]');
+
+  formEl.addEventListener('submit', function (e) {
     if (submitted) {
       e.preventDefault();
       return;
     }
-    submitted = true;
-    const btn = document.querySelector('button[type="submit"]');
-    btn.disabled = true;
-    btn.style.opacity = "0.6";
-    btn.textContent = "Submitting...";
+    // Let browser validate first
+    if (!formEl.checkValidity()) {
+      return; // browser will show validation errors
+    }
+    submitted = true; // remove preventDefault to allow natural submit
 
-    // Replace form with success message
-    const card = document.querySelector('.card');
-    card.innerHTML = '<h3 style="margin:4px 0 10px">Submitted</h3><p class="muted">Thank you — we will contact you shortly.</p>';
+    // Disable button + change text
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = "0.6";
+      submitBtn.textContent = "Submitting...";
+    }
+
+    // Let natural form submission happen (no manual submit)
+
+    // Delay replacement so Google receives submission first
+    setTimeout(() => {
+      const card = document.querySelector('.card');
+      if (card) {
+        card.innerHTML = '<h3 style="margin:4px 0 10px">✅ Submitted</h3><p class="muted">Thank you — we will contact you shortly.</p>';
+      }
+    }, 400);
   });
 </script>
 </body>
